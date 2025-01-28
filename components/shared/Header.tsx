@@ -21,7 +21,7 @@ export const Header = () => {
       <div className="flex items-center justify-between mx-auto max-w-2xl pl-4 ;g:px-6 md:max-w-7xl">
         <Link href="/">
           <h2 className="md:text-4xl text-3xl font-extrabold">
-            Py<span className="text-primary">Zon</span>
+            Quick<span className="text-primary">Buy</span>
           </h2>
         </Link>
 

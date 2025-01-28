@@ -17,8 +17,8 @@ export const Hero = async () => {
   return (
     <section className="mb-8 flex flex-wrap justify-between md:mb-16">
       <div className="mb-6 flex w-full flex-col justify-center lg:pt-48 lg:pb-24 lg:w-1/3">
-        <h1 className="md:text-6xl text-4xl font-bold text-black mb-4">
-          Pyzon Ecommerce
+        <h1 className="md:text-6xl text-4xl font-bold text-pink-800 mb-4">
+        QuickBuy
         </h1>
         <p className="xl:text-lg leading-relaxed text-gray-500 max-w-md">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore minima
@@ -55,7 +55,7 @@ export const Hero = async () => {
             href="/category/Men"
             className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-200 active:bg-gray-200"
           >
-            Men
+          Men
           </Link>
           <Link
             href="/category/Women"
