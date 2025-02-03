@@ -12,28 +12,34 @@ export const CheckoutButton = ({
   price,
   price_id,
 }: ProductCart) => {
-  const { checkoutSingleItem } = useShoppingCart();
+  const { cartDetails } = useShoppingCart(); // Get cart items
 
-  const product = {
-    name,
-    description,
-    price,
-    currency,
-    image: urlFor(image).url(),
-    id: price_id,
+  const handleCheckout = async () => {
+    const product = {
+      name,
+      description,
+      price,
+      currency,
+      image: urlFor(image).url(),
+      id: price_id,
+      quantity: 1, // Default quantity
+    };
+
+    const response = await fetch("/app/checkout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ items: [product] }), // Send the selected product
+    });
+
+    const { url } = await response.json();
+    if (url) window.location.href = url; // Redirect to Stripe Checkout
   };
-
-  const buyNow = (priceId: string) => {
-    checkoutSingleItem(priceId)
-  }
 
   return (
     <Button
-    variant="secondary"
-    className="border"
-      onClick={() => {
-        buyNow(price_id)
-      }}
+      variant="secondary"
+      className="border"
+      onClick={handleCheckout}
     >
       Checkout Now
     </Button>
